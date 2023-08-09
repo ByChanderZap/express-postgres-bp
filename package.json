@@ -8,9 +8,6 @@
     "dockerize": "docker-compose build dev && docker-compose up",
     "start": "node dist/main.js",
     "build": "tsc -p tsconfig.build.json",
-    "husky": "npm run format && npm run lint",
-    "lint-md": "remark .",
-    "format-md": "remark . -o",
     "format": "npm run lint:fix",
     "lint": "eslint ./src",
     "lint:check": "eslint -c .eslintrc.js --ext .ts,.tsx ./src",
@@ -37,7 +34,7 @@
     "@typescript-eslint/parser": "^5.38.0",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
-    "eslint": "^8.23.1",
+    "eslint": "^8.46.0",
     "eslint-plugin-jest": "^25.2.2",
     "jest": "^27.3.1",
     "jest-watch-typeahead": "^1.0.0",
@@ -64,10 +61,5 @@
     "standard": "^17.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
-  },
-  "eslintConfig": {
-    "extends": [
-      "./node_modules/standard/eslintrc.json"
-    ]
   }
 }
