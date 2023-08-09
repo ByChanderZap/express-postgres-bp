@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  dev:
+    container_name: epbp
+    image: epbp
+    build:
+      context: .
+      target: builder
+      dockerfile: ./dockerfile
+    command: npm run dev
+    ports:
+      - 3000:3000
+    networks:
+      - epbp-network
+    restart: unless-stopped
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    container_name: db
+    image: "postgres:latest"
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - epbp-network
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=supersecret
+    depends_on:
+      - db
+    networks:
+      - epbp-network
+networks:
+  epbp-network:
+    driver: "bridge"

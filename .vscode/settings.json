@@ -1,0 +1,22 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.fontLigatures": true,
+  "explorer.compactFolders": false,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0F3238",
+    "titleBar.activeBackground": "#15464E",
+    "titleBar.activeForeground": "#F6FCFD"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs":"active",
+  "editor.cursorBlinking": "expand",
+  "editor.linkedEditing": true,
+  "breadcrumbs.enabled": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.cursorSmoothCaretAnimation": "explicit"
+}
